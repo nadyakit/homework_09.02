@@ -4,15 +4,37 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style media="screen">
+      .box {
+        top: 50px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        background: sienna;
+      }
+      .orange {
+        width: 20px;
+        height: 20px;
+        top: 70px;
+        left: 200px;
+        border-radius: 10px;
+        background: orange;
+      }
+    </style>
     <script type="text/javascript">
         $(document).ready(function(){
-          $("div").click (function(){
-            $(this).addClass(".black");
-          });
+          $("box sienna").click(function(){
+            $(this).css({
+              width: function(index, value){
+                return parseFloat (value) +200;
+              }
+            })
+          })
         });
     </script>
   </head>
   <body>
-    <div class="box brown"></div>
+    <div class="box sienna"></div>
+    <div class="box orange"></div>
   </body>
 </html>
